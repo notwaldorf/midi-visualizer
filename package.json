@@ -1,0 +1,22 @@
+{
+  "name": "midi-visualizer",
+  "version": "0.0.1",
+  "description": "A visualizer web element for a midi file",
+  "main": "midi-visualizer.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notwaldorf/midi-visualizer.git"
+  },
+  "keywords": [
+    "custom element",
+    "web component",
+    "midi",
+    "visualizer"
+  ],
+  "author": "Monica Dinculescu <noms@google.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/notwaldorf/midi-visualizer/issues"
+  },
+  "homepage": "https://github.com/notwaldorf/midi-visualizer#readme"
+}

@@ -1,3 +1,3 @@
-midi visualizer
+midi-visualizer
 =================
 
