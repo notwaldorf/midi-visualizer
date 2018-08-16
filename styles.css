@@ -25,6 +25,11 @@ a:hover {
   background: var(--pink);
 }
 
+footer {
+  text-align: left;
+  margin: 24px auto;
+}
+
 button, .input {
   background: var(--teal);
   color: white;
