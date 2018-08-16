@@ -1,7 +1,11 @@
-midi-visualizer
+`<midi-visualizer>`
 =================
 
-This is a web component that shows you a visualization for a midi file.
+This is a web component that shows a visualization for a midi file, and can play
+audio while updating the visualization. The audio playing works best with Piano midi files at the moment,
+but some multi-instrument midi files will work too.
+
+<img src="https://user-images.githubusercontent.com/1369170/44228379-064a8900-a14a-11e8-8173-7dea5ede3de8.gif" alt="demo of using the midi-visualizer" height=500>
 
 ## Sample use
 
