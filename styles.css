@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  max-width: 700px;
+  margin: 40px;
+  -webkit-font-smoothing: antialiased;  
+  line-height: 1.5;
+  overflow-x: hidden;
+  --pink: #F05477;
+  --teal: #6FC9C6;
+}
+
+h1, h2 {
+  font-family: 'IBM Plex Mono', serif;
+  color: var(--pink);
+}
+
+a:link, a:visited {
+  color: black;
+  text-decoration: none;
+  border-bottom: 4px solid var(--pink);
+}
+
+a:hover {
+  color: white;
+  background: var(--pink);
+}
+
+button, .input {
+  background: var(--teal);
+  color: white;
+  border: none;
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+button[disabled] {
+  opacity: 0.5;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: white;
+  width: 60px;
+}
+
+input[type="file"] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  cursor: pointer;
+  display: none;
+}
+
+.canvas-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 5px solid var(--teal);
+}
+canvas{
+  display: block;
+}
+
+@media (max-width: 450px) {
+  body {
+    margin: 24px 14px;
+  }
+  .glitchButtonElement img {
+    width: 24px;
+  }
+  .glitchButton {
+    top: 40px !important;
+  }
+}
