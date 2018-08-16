@@ -92,6 +92,10 @@ class MidiVisualizer extends HTMLElement {
     this._player.stop();
   }
 
+  loadFile(blob) {
+    this._parseMidiFile(blob);
+  }
+
   // Keep attributes and properties in sync.
   static get observedAttributes() { return ['url', 'tempo']; }
   attributeChangedCallback(attr, oldValue, newValue) {
