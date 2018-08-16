@@ -3,7 +3,7 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   max-width: 700px;
   margin: 40px;
-  -webkit-font-smoothing: antialiased;  
+  -webkit-font-smoothing: antialiased;
   line-height: 1.5;
   overflow-x: hidden;
   --pink: #F05477;
@@ -60,13 +60,9 @@ input[type="file"] {
   display: none;
 }
 
-.canvas-container {
+midi-visualizer {
   width: 100%;
-  overflow-x: auto;
   border: 5px solid var(--teal);
-}
-canvas{
-  display: block;
 }
 
 @media (max-width: 450px) {

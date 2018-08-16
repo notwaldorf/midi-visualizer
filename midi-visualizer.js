@@ -68,18 +68,22 @@ class MidiVisualizer extends HTMLElement {
     this._player.setTempo(value);
   }
 
-  static get noteSequence() { return this._noteSequence; }
-  static set noteSequence(value) {
+  get noteSequence() { return this._noteSequence; }
+  set noteSequence(value) {
     if (value != this._noteSequence) {
       this._noteSequence = value;
-      console.log('should call init visualizer');
+      this._initializeVisualizer();
     }
   }
+
+  isPlaying() { return this._player.isPlaying(); }
 
   /********************
    *  Public methods this element exposes
    * ******************/
   start() {
+    // Reset the scroll position.
+    this.$.container.scrollLeft = 0;
     mm.Player.tone.context.resume();
     this._player.start(this.noteSequence);
   }
@@ -113,7 +117,7 @@ class MidiVisualizer extends HTMLElement {
 
     reader.onload = async (e) => {
       this.noteSequence = mm.midiToSequenceProto(e.target.result);
-      this._initializeVisualizer();
+      // This will call initializeVisualizer, so we don't have to.
     };
 
     reader.readAsBinaryString(file);

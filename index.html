@@ -9,10 +9,12 @@
   <script src="https://unpkg.com/@magenta/music@1.1.9/dist/magentamusic.js"></script>
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
   <link href="./styles.css" rel="stylesheet">
+
+  <script src="midi-visualizer.js"></script>
 </head>
 <body>
   <h1>piano midi visualizer</h1>
-  
+
   <p>(the darker the note, the louder it is -- i.e. the higher its strike velocity)</p>
   <div>
     <button id="playBtn" disabled>wait...</button>
@@ -21,13 +23,12 @@
       <input type="file" onchange="loadFile(event)">
        Load midi file
     </label>
-  
-    
   </div>
-  <div id="container" class="canvas-container">
-    <canvas id="canvas"></canvas>
-  </div>
-  
+  <midi-visualizer
+      id="visualizer"
+      url="https://cdn.glitch.com/3312a3b4-6418-4bed-a0bd-3a0ca4dfa2fb%2Fchopin.mid?1534369337985">
+  </midi-visualizer>
+
   <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
   <script src="https://button.glitch.me/button.js"></script>
   <script src="./script.js" defer></script>
