@@ -45,6 +45,7 @@
     tempoInput.addEventListener('change', () => visualizer.tempo = tempoInput.value);
     playBtn.addEventListener('click', () => startOrStop());
     visualizer.addEventListener('visualizer-ready', () => {
+      tempoInput.value = visualizer.tempo;
       playBtn.disabled = false;
       playBtn.textContent = 'play';
     });

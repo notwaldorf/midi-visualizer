@@ -121,6 +121,7 @@ class MidiVisualizer extends HTMLElement {
 
     reader.onload = async (e) => {
       this.noteSequence = mm.midiToSequenceProto(e.target.result);
+      this._player.setTempo(this.noteSequence.tempos[0].qpm);
       // This will call initializeVisualizer, so we don't have to.
     };
 
