@@ -6,15 +6,22 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
 
   <title>🎧</title>
+
+  <!-- Web components polyfill -->
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2.0.0/webcomponents-loader.js"></script>
+
+  <!-- load magenta.js -->
   <script src="https://unpkg.com/@magenta/music@1.1.9/dist/magentamusic.js"></script>
+
+  <!-- Load the web component-->
+  <script src="midi-visualizer.js"></script>
+
+  <!-- Make the demo pretty-->
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
   <link href="./styles.css" rel="stylesheet">
-
-  <script src="midi-visualizer.js"></script>
 </head>
 <body>
-  <h1>piano midi visualizer</h1>
-
+  <h1>Piano midi visualizer</h1>
   <p>(the darker the note, the louder it is -- i.e. the higher its strike velocity)</p>
   <div>
     <button id="playBtn" disabled>wait...</button>
@@ -29,8 +36,34 @@
       url="https://cdn.glitch.com/3312a3b4-6418-4bed-a0bd-3a0ca4dfa2fb%2Fchopin.mid?1534369337985">
   </midi-visualizer>
 
+  <script>
+    // Set up some event listeners
+    tempoInput.addEventListener('change', () => visualizer.tempo = tempoInput.value);
+    playBtn.addEventListener('click', () => startOrStop());
+    visualizer.addEventListener('visualizer-ready', () => {
+      playBtn.disabled = false;
+      playBtn.textContent = 'play';
+    });
+
+    function loadFile(e) {
+      const file = e.target.files[0];
+      //visualizer.url
+      //parseMidiFile(file);
+      return false;
+    }
+
+    function startOrStop() {
+      if (visualizer.isPlaying()) {
+        visualizer.stop();
+        playBtn.textContent = 'play';
+      } else {
+        visualizer.tempo = tempoInput.value;
+        visualizer.start();
+        playBtn.textContent = 'stop';
+      }
+    }
+  </script>
   <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
   <script src="https://button.glitch.me/button.js"></script>
-  <script src="./script.js" defer></script>
 </body>
 </html>
